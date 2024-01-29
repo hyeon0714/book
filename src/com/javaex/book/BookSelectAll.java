@@ -32,7 +32,7 @@ public class BookSelectAll {
 					query+=" select	book_id, ";
 					query+="		title, ";
 					query+="		pubs, ";
-					query+="		date_format(pub_date, '%Y- %m- %d') date, ";
+					query+="		date_format(pub_date, '%Y-%m-%d') date, ";
 					query+="		b.author_id, ";
 					query+="		a.author_id, ";
 					query+="		author_name, ";
@@ -61,8 +61,9 @@ public class BookSelectAll {
 					for(int i=0; i<bList.size(); i++) {
 						int id=bList.get(i).getBook_id();
 						String title=bList.get(i).getTitle();
-						title=String.format("%-30s", title).replace(" ", " ");	//글자수 차이가 심해서 정렬이 안맞음
+						title=String.format("%-20S", title);
 						String pubs=bList.get(i).getPubs();
+						pubs=String.format("%-20S", pubs);
 						String date=bList.get(i).getDate();
 						int id2=bList.get(i).getAuthor_id1();
 						int id3=bList.get(i).getAuthor_id2();
