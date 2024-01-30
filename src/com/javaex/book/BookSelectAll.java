@@ -61,9 +61,13 @@ public class BookSelectAll {
 					for(int i=0; i<bList.size(); i++) {
 						int id=bList.get(i).getBook_id();
 						String title=bList.get(i).getTitle();
-						title=String.format("%-20S", title);
+						if(title.length()<8) {
+							title=String.format("%-25S", title);
+						}else {
+							title=String.format("%-15S", title);
+						};
 						String pubs=bList.get(i).getPubs();
-						pubs=String.format("%-20S", pubs);
+						pubs=String.format("%-25S", pubs);
 						String date=bList.get(i).getDate();
 						int id2=bList.get(i).getAuthor_id1();
 						int id3=bList.get(i).getAuthor_id2();
